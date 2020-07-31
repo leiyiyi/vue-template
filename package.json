@@ -1,10 +1,16 @@
 {
   "name": "vue-template",
-  "version": "0.1.0",
+  "version": "1.0.1",
+  "author": "leiyi<leiyi@31huiyi.com>",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev": "npm run serve",
+    "build": "npm run build:prod",
+    "serve": "vue-cli-service serve --mode dev",
+    "build:dev": "vue-cli-service build --mode dev",
+    "build:test": "vue-cli-service build --mode test",
+    "build:pre": "vue-cli-service build --mode pre",
+    "build:prod": "vue-cli-service build --mode prod",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
