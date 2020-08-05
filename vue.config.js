@@ -11,6 +11,7 @@ const dayjs = require('dayjs')
 const resolve = dir => path.join(__dirname, dir)
 const enableSourceMap = Boolean(Number(process.env.VUE_APP_SOURCEMAP))
 const currentTime = dayjs().format('YYYY-MM-DD HH:mm:ss')
+const isProd = process.env.NODE_ENV === 'production'
 
 const apps = []
 const pages = {}
@@ -52,6 +53,12 @@ glob.sync('./src/apps/*/index.js', {
     })
   }
 })
+
+// 生产环境上SPA模式修正
+const pageProps = Object.keys(pages)
+if (isProd && pageProps.length === 1) {
+  pages[pageProps[0]].filename = 'index.html'
+}
 
 module.exports = {
   pages,
