@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import app from './index.vue'
 import router from './router'
 import store from './store'
 // 全端全局
@@ -19,6 +18,6 @@ Vue.config.productionTip = false
   new Vue({
     router,
     store,
-    render: h => h(app)
+    render: h => h('router-view')
   }).$mount('#app')
 })()
