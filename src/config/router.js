@@ -3,7 +3,7 @@
  */
 import { isDev, baseUrl } from '@/common/env'
 
-export default (base) => ({
+export default (base = '/') => ({
   mode: 'history',
   base: isDev ? base : baseUrl
 })
