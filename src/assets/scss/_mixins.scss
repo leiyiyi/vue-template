@@ -1,0 +1,105 @@
+// flex 布局
+@mixin flex($main: start, $cross: start, $direction: row) {
+  display: flex;
+  @if $main == start {
+    justify-content: flex-start;
+  } @else if $main == end {
+    justify-content: flex-end;
+  } @else if $main == center {
+    justify-content: center;
+  } @else if $main == between {
+    justify-content: space-between;
+  } @else if $main == around {
+    justify-content: space-around;
+  }
+  @if $cross == start {
+    align-items: flex-start;
+  } @else if $cross == end {
+    align-items: flex-end;
+  } @else if $cross == center {
+    align-items: center;
+  } @else if $cross == stretch {
+    align-items: stretch;
+  } @else if $cross == baseline {
+    align-items: baseline;
+  }
+  @if $direction == row {
+    flex-direction: row;
+  } @else if $direction == column {
+    flex-direction: column;
+  }
+}
+// 宽高
+@mixin w-h($width, $height) {
+  width: $width;
+  height: $height;
+}
+// “事件”
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+// “控制反转”
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+// 文本选中
+@mixin selection($bg_color, $color) {
+  &::selection {
+    background: $bg_color;
+    color: $color;
+  }
+}
+// 输入框占位符颜色
+@mixin placeholder($color) {
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+// 输入框光标颜色
+@mixin caret($color) {
+  caret-color: $color;
+}
+// 文本超出省略号
+@mixin hide-text($line: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $line != 1 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+  } @else {
+    white-space: nowrap;
+  }
+}
+// 清除浮动
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

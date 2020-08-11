@@ -10,7 +10,8 @@ const resolve = dir => path.join(__dirname, '.', dir)
 module.exports = {
   resolve: {
     alias: {
-      '@': resolve('./src')
+      '@': resolve('./src'),
+      '@auth': resolve('./src/auth')
     }
   }
 }

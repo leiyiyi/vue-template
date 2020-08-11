@@ -1,0 +1,29 @@
+// 禁止点击事件
+%no-events {
+  pointer-events: none;
+}
+// 禁止长按呼出菜单
+%no-callout {
+  -webkit-touch-callout: none;
+}
+// 禁止文字选中
+%no-select {
+  user-select: none;
+}
+// 不换行
+%no-wrap {
+  white-space: nowrap;
+}
+// 自动换行
+%auto-wrap {
+  word-wrap: break-word;
+  word-break: normal;
+}
+// 强制换行
+%be-wrap {
+  word-break: break-all;
+}
+// 顺畅滚动
+%scroll-touch {
+  -webkit-overflow-scrolling: touch
+}
