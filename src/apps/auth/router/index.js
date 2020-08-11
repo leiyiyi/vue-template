@@ -15,7 +15,7 @@ const routes = [
       render: h => h('router-view')
     },
     redirect: {
-      name: 'home'
+      name: 'layout'
     },
     children: [
       ...children,
