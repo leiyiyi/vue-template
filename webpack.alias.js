@@ -1,5 +1,5 @@
 /**
- * webstorm下正确识别路径别名的配置文件
+ * WebStorm 下正确识别路径别名的配置文件
  * 设置路径：
  * Settings > Languages & Frameworks > JavaScript > Webpack
  */

@@ -1,0 +1,46 @@
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  grid-template-rows: 64px 1fr 48px;
+  gap: 0;
+  grid-template-areas: "aside header" "aside main" "aside footer";
+  &__aside {
+    grid-area: aside;
+    background: url(~@auth/assets/bg-aside.jpg) center center no-repeat;
+    background-size: cover;
+  }
+  &__header {
+    grid-area: header;
+    @include flex(between, center);
+    padding: 0 20px;
+    &__logo {
+      height: 52px;
+      @include flex(stretch, start);
+      &-img {
+        width: auto;
+        height: 100%;
+      }
+    }
+    &__return {
+      font: {
+        size: 14px;
+        weight: 400;
+      }
+    }
+  }
+  &__main {
+    grid-area: main;
+    @include flex(center, center);
+    padding: 30px 20px 50px;
+  }
+  &__footer {
+    grid-area: footer;
+    @include flex(center, center);
+    font: {
+      size: 12px;
+      weight: 400;
+    }
+    color: #CDCDCD;
+  }
+}
