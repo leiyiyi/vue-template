@@ -1,0 +1,12 @@
+.link-switch {
+  @include flex(between, center);
+  @include w-h(420px, 70px);
+  &__item {
+    font: {
+      size: 14px;
+      weight: 400;
+    }
+    text-decoration: none;
+    color: #3375CD;
+  }
+}

@@ -14,8 +14,6 @@ import './startup'
 
 Vue.config.productionTip = false
 
-console.log('auth', router)
-
 ;(async () => {
   new Vue({
     router,

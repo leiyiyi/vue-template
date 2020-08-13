@@ -31,7 +31,7 @@
   }
   &__main {
     grid-area: main;
-    @include flex(center, center);
+    @include flex(center, center, column);
     padding: 30px 20px 50px;
   }
   &__footer {

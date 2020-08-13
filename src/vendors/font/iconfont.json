@@ -1,0 +1,37 @@
+{
+  "id": "2000391",
+  "name": "vue-template",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8776631",
+      "name": "view",
+      "font_class": "view-on",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "8776676",
+      "name": "view_off",
+      "font_class": "view-off",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "16408070",
+      "name": "登陆",
+      "font_class": "username",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "16409984",
+      "name": "锁定",
+      "font_class": "password",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    }
+  ]
+}

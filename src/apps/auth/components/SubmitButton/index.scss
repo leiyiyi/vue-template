@@ -1,0 +1,17 @@
+.submit-button {
+  @include w-h(100%, 44px);
+  margin-top: 24px;
+  background-color: #CD2831;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  font: {
+    size: 14px;
+    weight: 400;
+  }
+  color: #FFF;
+  cursor: pointer;
+  &:hover {
+    background-color: lighten(#CD2831, 10);
+  }
+}
