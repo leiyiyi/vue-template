@@ -4,6 +4,7 @@
   "author": "leiyi<leiyi@31huiyi.com>",
   "private": true,
   "scripts": {
+    "start": "npm i",
     "dev": "npm run serve",
     "build": "npm run build:prod",
     "serve": "vue-cli-service serve --mode dev",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@koa/router": "^9.4.0",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-plugin-router": "~4.4.0",
