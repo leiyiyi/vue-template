@@ -1,0 +1,27 @@
+.menu {
+  &__ul {
+    list-style: none;
+  }
+  &__li {
+    &-children, &-items {
+      list-style: none;
+      padding-left: 24px;
+    }
+    &-folder, &-item {
+      margin-bottom: 2px;
+      padding: 0 8px 0 28px;
+      height: 38px;
+      line-height: 38px;
+      cursor: pointer;
+      &:hover {
+        background-color: #F0FBFF;
+      }
+    }
+    &-folder {
+      background: transparent url(./imgs/folder--opened.svg) 8px center/14px 14px no-repeat;
+    }
+    &-item {
+      background: transparent url(./imgs/file.svg) 8px center/14px 14px no-repeat;
+    }
+  }
+}

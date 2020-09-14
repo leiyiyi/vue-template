@@ -1,0 +1,41 @@
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 50px 50px 1fr;
+  gap: 20px;
+  grid-template-areas:
+   "header header"
+    "aside tabs"
+    "aside main";
+  place-items: stretch stretch;
+  place-content: stretch stretch;
+  &__header {
+    grid-area: header;
+  }
+  &__aside {
+    grid-area: aside;
+    background-color: #FFF;
+    margin-top: -20px;
+    padding: 20px 12px;
+    &-menu {
+      margin: 0;
+      padding: 0;
+      font: {
+        size: 14px;
+      }
+      color: #434343;
+    }
+  }
+  &__tabs {
+    grid-area: tabs;
+    background-color: #FFF;
+    margin-right: 20px;
+  }
+  &__main {
+    grid-area: main;
+    background: #FFF;
+    padding: 20px;
+    margin-right: 20px;
+  }
+}

@@ -1,0 +1,9 @@
+.header {
+  background-color: #32363A;
+  padding: 0 20px;
+  @include flex(start, center);
+  font: {
+    size: 14px;
+  }
+  color: #FFF;
+}
