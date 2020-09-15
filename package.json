@@ -1,6 +1,6 @@
 {
   "name": "vue-template",
-  "version": "1.0.1",
+  "version": "2.0.1",
   "author": "leiyi<leiyibeyond@qq.com>",
   "private": true,
   "scripts": {
@@ -23,22 +23,23 @@
     "dayjs": "^1.8.35",
     "lodash": "^4.17.20",
     "sanitize.css": "^11.0.1",
-    "vue": "^2.6.12",
-    "vue-i18n": "^8.21.0",
-    "vue-router": "^3.4.3",
-    "vuex": "^3.4.0"
+    "vue": "^3.0.0-0",
+    "vue-i18n": "^8.21.1",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
     "@koa/router": "^9.4.0",
-    "@vue/cli-plugin-babel": "~4.4.0",
-    "@vue/cli-plugin-eslint": "~4.4.0",
-    "@vue/cli-plugin-router": "~4.4.0",
-    "@vue/cli-plugin-unit-jest": "~4.4.0",
-    "@vue/cli-plugin-vuex": "~4.4.0",
-    "@vue/cli-service": "~4.4.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0-0",
     "@vue/eslint-config-standard": "^5.1.2",
-    "@vue/test-utils": "^1.0.5",
+    "@vue/test-utils": "^2.0.0-0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
@@ -47,14 +48,15 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vue": "^7.0.0-0",
     "glob": "^7.1.6",
     "koa": "^2.13.0",
     "lint-staged": "^9.5.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.12",
-    "webpack-bundle-analyzer": "^3.8.0"
+    "webpack-bundle-analyzer": "^3.8.0",
+    "typescript": "~3.9.3",
+    "vue-jest": "^5.0.0-0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
