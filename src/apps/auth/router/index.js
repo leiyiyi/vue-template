@@ -1,18 +1,16 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import config from '@/config/router'
+import { h } from 'vue'
+import { RouterView, createRouter } from 'vue-router'
 import { appName } from '../common/env'
+import config from '@/config/router'
 import children from './children'
 import errors from './errors'
-
-Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: 'root',
     component: {
-      render: h => h('router-view')
+      render: () => h(RouterView)
     },
     redirect: {
       name: 'layout'
@@ -24,7 +22,7 @@ const routes = [
   }
 ]
 
-export default new VueRouter({
+export default createRouter({
   ...config(appName),
   routes
 })

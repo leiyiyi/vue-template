@@ -1,7 +1,7 @@
 <template>
   <nav class="tabs">
-    {{[...tabs]}}
     {{tabLength}}
+    {{[...tabs]}}
   </nav>
 </template>
 

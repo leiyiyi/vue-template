@@ -19,13 +19,13 @@ const mutations = {
 
 const actions = {
   openTab ({ state, commit }, item) {
-    console.log('item', item)
+    console.log('item', item, state.tabs)
+    const copy = new Map(state.tabs)
     const key = item.nodes.join('/')
-    if (!state.tabs.has(key)) {
-      state.tabs.set(key, item)
+    if (!copy.has(key)) {
+      copy.set(key, item)
     }
-    commit('setTabs', state.tabs)
-    console.log(state.tabs)
+    commit('setTabs', copy)
   },
   closeTab ({ state, commit }, key) {
 

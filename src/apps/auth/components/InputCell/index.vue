@@ -2,7 +2,7 @@
   <div
     class="input-cell"
     :class="{
-      'input-cell--suffix': $scopedSlots.default,
+      // 'input-cell--suffix': $scopedSlots.default,
       'input-cell--focused': focused
     }"
   >
@@ -18,19 +18,20 @@
     />
     <input
       class="input-cell__input"
-      v-model.trim="val"
+      v-model.trim="value"
       :id="fakeId"
       :type="type"
       :form="form"
       :placeholder="placeholder"
       @focus="focused = true"
-      @blur="!val && (focused = false)"
+      @blur="!value && (focused = false)"
     />
     <slot klass="input-cell__suffix"/>
   </div>
 </template>
 
 <script>
+import { ref, computed } from 'vue'
 import { generateFakeId } from '@/utils/string'
 
 export default {
@@ -46,25 +47,22 @@ export default {
     placeholder: String,
     icon: String
   },
-  computed: {
-    val: {
-      get () {
-        return this.value
-      },
-      set (v) {
-        this.$emit('input', v)
-      }
-    }
-  },
-  data () {
+  setup (props, { emit }) {
+    const fakeId = generateFakeId()
+    const focused = ref(false)
+    const value = computed({
+      get: () => props.value,
+      set: (v) => emit('update:value', v)
+    })
     return {
-      fakeId: generateFakeId(),
-      focused: false
+      fakeId,
+      focused,
+      value
     }
   }
 }
 </script>
 
 <style lang="scss">
-  @import "index";
+@import "index";
 </style>

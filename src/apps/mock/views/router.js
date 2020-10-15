@@ -8,7 +8,7 @@ export default [
     }
   },
   {
-    path: '*',
+    path: ':catchAll(.*)',
     name: 'detail',
     component: () => import('./detail'),
     meta: {

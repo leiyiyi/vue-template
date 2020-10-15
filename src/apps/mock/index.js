@@ -1,26 +1,35 @@
-import Vue from 'vue'
+import { createApp, h } from 'vue'
+import { RouterView } from 'vue-router'
 import router from './router'
 import store from './store'
 // 全端全局
-import '../../components'
-import '../../directives'
-import '../../filters'
+import globalComponents from '../../components'
+// import '../../directives'
+// import '../../filters'
 // 单端全局
-import './components'
-import './directives'
-import './filters'
+import appComponents from './components'
+// import './directives'
+// import './filters'
 // 单侧应用启动
 import './startup'
 
-import data from './data'
-console.log('data', data)
+const app = createApp({
+  render: () => h(RouterView)
+})
 
-Vue.config.productionTip = false
+// 注册全局组件
+new Map([
+  ...globalComponents,
+  ...appComponents
+]).forEach((val, key) => {
+  app.component(key, val)
+})
 
-;(async () => {
-  new Vue({
-    router,
-    store,
-    render: h => h('router-view')
-  }).$mount('#app')
-})()
+// 注册router/vuex
+app.use(router)
+app.use(store)
+
+console.log('app', app, app.$router)
+
+// 挂载
+app.mount('body')

@@ -1,11 +1,8 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import modules from './modules'
+import { createStore } from 'vuex'
 import { isDev } from '@/common/env'
+import modules from './modules'
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
+export default createStore({
   strict: isDev,
   modules,
   state: {},

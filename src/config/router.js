@@ -1,9 +1,9 @@
 /**
  * 路由配置设置
  */
+import { createWebHistory } from 'vue-router'
 import { isDev, baseUrl } from '@/common/env'
 
 export default (base = '/') => ({
-  mode: 'history',
-  base: isDev ? base : baseUrl
+  history: createWebHistory(isDev ? base : baseUrl)
 })

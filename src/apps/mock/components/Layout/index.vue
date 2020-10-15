@@ -15,10 +15,11 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 import Header from '../Header'
 import Menu from '../Menu'
 import Tabs from '../Tabs'
-import data from './data'
+import data1 from './data'
 
 export default {
   name: 'Layout',
@@ -27,7 +28,8 @@ export default {
     Menu,
     Tabs
   },
-  data () {
+  setup () {
+    const data = ref(data1)
     return {
       data
     }

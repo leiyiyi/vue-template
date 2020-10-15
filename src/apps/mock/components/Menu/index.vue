@@ -30,27 +30,26 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { useStore } from 'vuex'
 
 export default {
   name: 'Menu',
   props: {
     data: Array
   },
-  computed: {
-    ...mapState('app', [
-      'tabs'
-    ])
-  },
-  methods: {
-    ...mapActions('app', [
-      'openTab'
-    ]),
-    handleFolderClick (item) {
-
-    },
-    handleFileClick (item) {
-      this.openTab(item)
+  setup (props) {
+    const store = useStore()
+    const handleFolderClick = item => {
+      console.log(item)
+      store.dispatch('app/openTab', item)
+    }
+    const handleFileClick = item => {
+      store.dispatch('app/openTab', item)
+      // console.log(item)
+    }
+    return {
+      handleFolderClick,
+      handleFileClick
     }
   }
 }

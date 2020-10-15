@@ -6,7 +6,7 @@
       :key="item.name"
       :to="{
         name: item.name,
-        query: $route.query
+        // query: $route.query
       }"
     >
       {{ item.label }}
@@ -15,6 +15,9 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
 const links = [
   {
     name: 'login',
@@ -35,17 +38,18 @@ export default {
   props: {
     current: String
   },
-  computed: {
-    hideName () {
-      return this.current || this.$route.name
-    },
-    showLinks () {
-      return links.filter(v => v.name !== this.hideName)
+  setup (props) {
+    const route = useRoute()
+    const hideName = computed(() => props.current || route.name)
+    const showLinks = computed(() => links.filter(v => v.name !== hideName.value))
+    return {
+      hideName,
+      showLinks
     }
   }
 }
 </script>
 
 <style lang="scss">
-  @import "index";
+@import "index";
 </style>
