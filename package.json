@@ -1,5 +1,6 @@
 {
   "name": "vue-template",
+  "description": "",
   "version": "2.0.1",
   "author": "leiyi<leiyibeyond@qq.com>",
   "private": true,
@@ -18,10 +19,13 @@
     "mock": "node mock/main.js"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "dayjs": "^1.9.3",
+    "eruda": "^2.4.1",
     "lodash": "^4.17.20",
+    "mitt": "^2.1.0",
     "sanitize.css": "^11.0.1",
     "vue": "^3.0.0",
     "vue-i18n": "^8.22.0",
@@ -29,6 +33,7 @@
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
     "@koa/router": "^9.4.0",
     "@vue/cli-plugin-babel": "^4.5.7",

@@ -2,7 +2,6 @@
  * 工厂方法创建App
  */
 import { createApp, h } from 'vue'
-// import { RouterView } from 'vue-router'
 
 const createMyApp = ({
   router = null,
