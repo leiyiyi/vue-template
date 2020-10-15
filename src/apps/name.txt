@@ -1,0 +1,20 @@
+admin
+- auth
+blog
+business
+client
+customer
+dashboard
+document
+file
+finance
+issue
+manage
+- mock
+platform
+project
+reports
+staff
+task
+tenant
+wiki
