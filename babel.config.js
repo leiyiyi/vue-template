@@ -1,14 +1,23 @@
 const isProd = process.env.NODE_ENV === 'production'
 const plugins = []
 
-// 支持可选链语法
-plugins.push(
-  ['@babel/plugin-proposal-optional-chaining', {
+// 支持可选链操作符(?.)
+plugins.push([
+  '@babel/plugin-proposal-optional-chaining',
+  {
     loose: false
-  }]
-)
+  }
+])
 
-// 生产环境清除console
+// 支持空值合并操作符(??)
+plugins.push([
+  '@babel/plugin-proposal-nullish-coalescing-operator',
+  {
+    loose: false
+  }
+])
+
+// 生产环境清除 console
 // 依赖包：npm i -D babel-plugin-transform-remove-console
 if (isProd) {
   plugins.push([
