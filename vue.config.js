@@ -3,18 +3,23 @@
  * @file vue.config.js
  */
 
+// Native
 const path = require('path')
+
+// Packages
 const { error } = require('@vue/cli-shared-utils')
 const webpack = require('webpack')
 const dayjs = require('dayjs')
 const args = require('minimist')(process.argv.slice(2))
+
+// Utilities
 const apps = require('./apps')
 
 const resolve = dir => path.join(__dirname, dir)
-const enableSourceMap = Boolean(Number(process.env.VUE_APP_SOURCEMAP))
 const currentTime = dayjs().format('YYYY-MM-DD HH:mm:ss')
-const isProd = process.env.NODE_ENV === 'production'
+const enableSourceMap = !!Number(process.env.VUE_APP_SOURCEMAP)
 const buildApp = args.app || false
+const isProd = process.env.NODE_ENV === 'production'
 
 const pages = {}
 const aliases = []
