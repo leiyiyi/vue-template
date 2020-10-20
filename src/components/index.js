@@ -2,9 +2,9 @@
  * 全局组件自动引入
  * @file /src/components/index.js
  */
+const context = require.context('.', true, /\/\w+\/index\.vue$/)
 const result = new Map()
 const ignoreList = []
-const context = require.context('.', true, /\/\w+\/index\.vue$/)
 
 context.keys().forEach(item => {
   const [, name] = /\/(\w+)\/index\.vue$/.exec(item)

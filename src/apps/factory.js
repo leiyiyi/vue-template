@@ -21,12 +21,6 @@ const createMyApp = ({
       app.config.globalProperties[key] = val
     })
   }
-  if (router) {
-    app.use(router)
-  }
-  if (store) {
-    app.use(store)
-  }
   if (components) {
     components.forEach((val, key) => {
       app.component(key, val)
@@ -36,6 +30,12 @@ const createMyApp = ({
     directives.forEach((val, key) => {
       app.directive(key, val)
     })
+  }
+  if (router) {
+    app.use(router)
+  }
+  if (store) {
+    app.use(store)
   }
   // app.config.errorHandler = (err, vm, info) => {
   //   // handle error

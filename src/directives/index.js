@@ -2,12 +2,17 @@
  * 全局指令自动引入
  * @file /src/directives/index.js
  */
-
-import Vue from 'vue'
-
 const context = require.context('./modules', false, /^\.\/\w+\.js$/)
+const result = new Map()
+const ignoreList = []
 
 context.keys().forEach(item => {
   const [, name] = /^\.\/(\w+)\.js$/.exec(item)
-  Vue.directive(name, context(item).default)
+  if (!ignoreList.includes(name)) {
+    const directive = context(item).default
+    const directiveName = directive.name || name
+    result.set(directiveName, directive)
+  }
 })
+
+export default result

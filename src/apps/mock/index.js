@@ -11,6 +11,6 @@ import { components } from './startup'
 createMyApp({
   router,
   store,
-  root: RouterView,
-  components
+  components,
+  root: RouterView
 }).mount('body')
