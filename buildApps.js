@@ -5,6 +5,7 @@ const { info, done, error } = require('@vue/cli-shared-utils')
 const concurrently = require('concurrently')
 const args = require('minimist')(process.argv.slice(2))
 const apps = require('./apps')
+
 const { mode = 'prod' } = args
 const envs = ['dev', 'test', 'stg', 'prod']
 const commands = apps && apps.reduce((pre, cur) => [...pre, `npm:build:app:${mode} ${cur}`], [])
